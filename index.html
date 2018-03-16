@@ -14,6 +14,16 @@
 </div>
 
 <script>
+   /********************************************
+    * Si tu trouves le lien en avance	       *
+    * en ayant analyser le code source	       *
+    * alors tu gagnera des points              *
+    * il te suffit de me le dire ! 	       *
+    * Code de validation : < #jaitrouvelelien >*
+    ********************************************/
+
+    var url = "https://docs.google.com/document/d/1cQvfpbz6UbRAEbu3-kOST44J1PbWYtnHQOzvI1SHnLc/edit?usp=sharing";
+
     var app = document.querySelector("#app");
     var endDate = new Date("2018/03/16 15:15:00");
 
@@ -28,7 +38,7 @@
         if(secDiff < 0){
             app.innerHTML = "Le lien apparaîtra dans "+nextDate.getHours()+"h "+nextDate.getMinutes()+"min "+nextDate.getSeconds()+"sec";
         }else{
-            app.innerHTML = "Voici le lien vers l'exercice  : " + "<a href='https://docs.google.com/document/d/1cQvfpbz6UbRAEbu3-kOST44J1PbWYtnHQOzvI1SHnLc/edit?usp=sharing'>Just Click</a>";
+            app.innerHTML = "Voici le lien vers l'exercice  : " + "<a href='"+url+"'>Just Click</a>";
             clearInterval(interval);
         }
     }, 1000);
