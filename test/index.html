@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+
+</div>
+
+<script type="javascript">
+    var app = document.querySelector("#app");
+    var endDate = new Date("2018/03/16 15:15:00");
+
+    var secDiff, nextDate;
+
+    var interval;
+
+    interval = setInterval(function() {
+        secDiff = ((new Date().getTime()) - endDate.getTime())/1000;
+        nextDate = new Date("1995/11/25");
+        nextDate.setMilliseconds(Math.abs(secDiff*1000));
+        if(secDiff < 0){
+            app.innerHTML = "Le lien apparaîtra dans "+nextDate.getHours()+"h "+nextDate.getMinutes()+"min "+nextDate.getSeconds()+"sec";
+        }else{
+            app.innerHTML = "Voici le lien vers l'exercice  : " + "<a href='https://docs.google.com/document/d/1cQvfpbz6UbRAEbu3-kOST44J1PbWYtnHQOzvI1SHnLc/edit?usp=sharing'>Just Click</a>";
+            clearInterval(interval);
+        }
+    }, 1000);
+</script>
+</body>
+</html>
